@@ -1,0 +1,848 @@
+/*****************************************************   General      ***********************************************/
+
+
+body {
+    padding-top: 4.4rem;
+}
+
+.row {
+    --mdb-gutter-x: 0 !important;
+    /* Set it to 0 to remove horizontal spacing */
+}
+
+
+
+/***************************************************  Navigation Bar/Menu  *****************************************/
+.navbar {
+    background-color: $homepageLightColour ;
+    transition: background-color 0.6s;
+    height: auto;
+    padding: 0;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    flex: 1 0 67%;
+    justify-content: flex-end;
+
+}
+
+.navbar-nav .nav-link {
+    color: $homepageDarkColour;
+}
+
+.navbar-nav .nav-:hover {
+    color: blue !important;
+}
+
+.navbar-brand {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+
+/*** custom styles for navbar  ***/
+.custom-navbar-bg {
+    background-color: white !important;
+
+    .navbar-brand {
+        filter: hue-rotate(30deg) brightness(80%) contrast(80%) saturate(150%);
+
+    }
+}
+
+.navbar-toggler {
+    background-color: $homepageDarkColour;
+
+
+}
+
+.navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-bg) !important;
+}
+
+
+.custom-toggler-styles {
+    background-color: $homepageLightColour;
+}
+
+.custom-navlink-color {
+    color: blue !important;
+}
+
+
+/******************************************************     Main Section    ******************************************/
+
+/**********************  Hero Section  *******************/
+.hero-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-top: 0.3rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: aliceblue;
+    transform: translate(-50%, -60%);
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        font-size: 120px;
+        font-family: 'Lobster', cursive;
+    }
+
+    h5 {
+        margin-bottom: -7px;
+        padding: 0;
+        font-size: 30px;
+        text-transform: lowercase;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    .btn-invitation {
+        margin-top: 10px !important;
+        background-color: transparent;
+        color: $homepageLightColour;
+        height: 8% !important;
+        height: fit-content;
+        border: 2px solid $homepageLightColour;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .btn-invitation:hover {
+        background-color: $homepageLightColour;
+        color: black !important;
+        border: 2px solid $homepageLightColour;
+    }
+
+}
+
+.overlay-text {
+    h2 {
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        font-size: 1.85em;
+        font-family: "Soehne", system-ui, Helvetica Neue, Arial, sans-serif;
+    }
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 855px) {
+    .hero-text {
+        h1 {
+            font-size: 96px;
+        }
+
+        h5 {
+            margin-bottom: -5px;
+            font-size: 24px;
+        }
+
+        .btn-invitation {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+    }
+
+    .overlay-text {
+        h2 {
+            font-size: 1.7em;
+        }
+    }
+
+}
+
+
+/* Media query for even smaller screens */
+@media (max-width: 675px) {
+    .hero-text {
+        h1 {
+            font-size: 76px;
+        }
+
+        h5 {
+            margin-bottom: -5px;
+            font-size: 24px;
+        }
+
+    }
+
+    .overlay-text {
+        h2 {
+            font-size: 1.3em;
+        }
+    }
+
+}
+
+
+
+/* Media query for even smaller screens */
+@media (max-width: 540px) {
+    .hero-text {
+        h1 {
+            font-size: 30px;
+        }
+
+        h5 {
+            margin-bottom: -3px;
+            font-size: 18px;
+        }
+
+        .btn-invitation {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+
+    }
+
+    .overlay-text {
+        h2 {
+            font-size: 0.9em;
+        }
+    }
+
+}
+
+
+
+
+/***********************  Main Content Section ********************/
+.main-content {
+    background-color: white;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.animation-text-buffer {
+    padding-top: 12px !important;
+    height: 34rem;
+    max-height: 45rem;
+    /* Set the maximum height for the animation text buffer */
+    overflow-y: auto;
+    /* Add vertical scrollbar if content exceeds the max height */
+    background-color: $homepageLightColour;
+    color: $homepageDarkColour;
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 1.85em;
+    margin: 0;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    padding: 10px;
+    /* Add some padding for better spacing */
+    border: 1px solid #ccc;
+    /* Add a border for better separation */
+}
+
+.animation-text {
+    margin-left: 25px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 855px) {
+    .animation-text-buffer {
+        height: 40rem;
+        max-height: 40rem;
+        /* Set the maximum height for the animation text buffer */
+        font-size: 1.7em;
+    }
+}
+
+
+/* Media query for even smaller screens */
+@media (max-width: 675px) {
+    .animation-text-buffer {
+        height: 36.5rem;
+        max-height: 36.5rem;
+        /* Set the maximum height for the animation text buffer */
+        font-size: 1.3em;
+    }
+
+}
+
+
+/* Media query for even smaller screens */
+@media (max-width: 445px) {
+    .animation-text-buffer {
+        font-size: 1.05em;
+    }
+}
+
+
+
+.section-buffer {
+    padding-top: 12px !important;
+    height: auto;
+    // overflow-y: auto;
+    background-color: $homepageLightColour;
+    color: $homepageDarkColour;
+
+
+    margin: 0;
+    letter-spacing: 0.2rem;
+
+    padding: 10px;
+    border: 1px solid #ccc;
+
+    h5 {
+        font-size: 2.25em;
+        font-family: "Soehne", system-ui, Helvetica Neue, Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.65em;
+        font-family: 'Waiting for the Sunrise', cursive;
+
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            color: #333!important;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        li::before {
+            content: "\2022"; /* Bullet character */
+            color: #333!important;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+    }
+
+
+    .btn-invitation {
+        margin-top: 10px !important;
+        background-color: $homepageDarkColour;
+        color: $homepageLightColour;
+        height: 5% !important;
+        height: fit-content;
+        border: 2px solid $homepageLightColour;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .btn-invitation:hover {
+        background-color: $homepageLightColour;
+        color: black !important;
+        border: 2px solid $homepageLightColour;
+    }
+
+    
+}
+
+@media (max-width: 855px) {
+    .section-buffer {
+
+        h5 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.45em;
+        }
+
+        .btn-invitation {
+            padding: 8px 16px!important;
+            font-size: 12px!important;
+        }
+    }
+
+}
+
+@media (max-width: 675px) {
+    .section-buffer {
+
+        h5 {
+            font-size: 1.95em;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+    }
+}
+
+@media (max-width: 445px) {
+    .section-buffer {
+
+        h5 {
+            font-size: 1.6em;
+        }
+
+        p {
+            font-size: 1.05em;
+        }
+
+        .btn-invitation {
+            padding: 6px 14px!important;
+            font-size: 9px!important;
+        }
+    }
+}
+
+
+.image-text-container {
+   position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+   padding: 160px;
+    //padding: 10px;
+    
+   
+
+    img {
+        max-width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+        opacity: 0.5;
+        transform: translateX(-100%);
+        animation: slide-in 2s forwards; /* Animation to slide image in */
+    }
+    
+    
+
+    .text-content {
+        position: absolute;
+        background: linear-gradient(transparent, transparent), /* Transparent gradient */
+                    radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%); /* Shape gradient */
+        padding: 5px;
+        border-radius: 8px;
+        transform: translateY(100%);
+        animation: slide-up 2s forwards; /* Animation to slide text up */
+        
+        height: auto;
+    }
+    
+
+
+    h2 {
+        font-size: 44px;
+        
+        color: lightgoldenrodyellow;
+    }
+    
+    p {
+        font-size: 1.5em;
+        font-family: 'Waiting for the Sunrise', cursive;
+        color: rgb(245, 244, 255);
+        font-weight: 500;
+    }
+}
+
+
+
+@media (max-width: 855px) {
+    .image-text-container {
+        
+         h2 {font-size: 32px;}
+         
+         p {font-size: 1.2em;}
+     }
+    
+}
+
+
+/* Media query for even smaller screens */
+@media (max-width: 675px) {
+    .image-text-container {
+        
+        h2 {
+            font-size: 28px;
+            
+        }
+        
+        p {font-size: 1em;}
+    }
+
+}
+
+
+/* Media query for even smaller screens */
+@media (max-width: 545px) {
+    .image-text-container {
+      
+        h2 {font-size: 24px;}
+        
+        p {font-size: 0.85em;}
+    }
+}
+
+
+
+
+@keyframes slide-in {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-up {
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+.goal-buffer {
+    background-color: $goalBackColour;
+    height: auto;
+
+}
+
+
+
+
+
+
+.involvement-buffer {
+    background-color: $involvedBackColour;
+
+}
+
+.diversity-buffer {
+    background-color: $diversityBackColour;
+}
+
+
+
+
+
+
+
+.carousel-control-next-icon:after,
+.carousel-control-prev-icon:after {
+    content: none !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: $iconBackImage
+}
+
+.carousel-control-next-icon {
+    background-image: $iconNextImage
+}
+
+.carousel-caption {
+    h5 {
+        color: $textOverlayColour;
+        font-family: 'Stint Ultra Expanded', serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+        /* Adjust the font size as needed for larger screens */
+    }
+
+    p {
+        color: $homepageLightColour;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        /* Adjust the font size as needed for larger screens */
+    }
+
+
+    .btn-invitation {
+        margin-top: 10px !important;
+        background-color: transparent;
+        color: $textOverlayColour;
+        height: 8% !important;
+        height: fit-content;
+        border: 2px solid $textOverlayColour;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .btn-invitation:hover {
+        background-color: $homepageLightColour;
+        color: black !important;
+        border: 2px solid $homepageLightColour;
+    }
+
+
+}
+
+
+.carousel-caption-button {
+    top: 50% !important;
+    left: 50% !important;
+    height: fit-content !important;
+    transform: translate(-50%, -60%) !important;
+}
+
+// Media Query for Smaller Screens
+@media (max-width: 768px) {
+    .carousel-caption {
+        h5 {
+            font-size: 1.2rem;
+            /* Adjust the font size for smaller screens */
+        }
+
+        p {
+            font-size: 0.9rem;
+            /* Adjust the font size for smaller screens */
+        }
+
+        .btn-invitation {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+    }
+}
+
+// Media Query for Smaller Screens
+@media (max-width: 525px) {
+    .carousel-caption {
+        h5 {
+            font-size: 1.2rem;
+            /* Adjust the font size for smaller screens */
+        }
+
+        p {
+            font-size: 0.9rem;
+            /* Adjust the font size for smaller screens */
+        }
+
+        .btn-invitation {
+            padding: 8px 16px;
+            font-size: 12px;
+        }
+    }
+}
+
+
+.top-left-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: rgb(227, 255, 233);
+    padding: 5px 15px;
+    font-size: 2.3rem;
+    font-family: 'Jost', sans-serif !important;
+
+}
+
+
+@media (max-width: 855px) {
+    .top-left-text {
+        font-size: 2.1rem;
+    }
+
+}
+
+@media (max-width: 675px) {
+    .top-left-text {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 445px) {
+    .top-left-text {
+        font-size: 1.7rem;
+    }
+}
+
+
+
+.slideshow-buffer {
+    padding-top: 12px !important;
+    height: 34rem;
+    max-height: 45rem;
+    /* Set the maximum height for the animation text buffer */
+    overflow-y: auto;
+    /* Add vertical scrollbar if content exceeds the max height */
+    background-color: $homepageLightColour;
+    color: $homepageDarkColour;
+    font-family: 'Waiting for the Sunrise', cursive;
+    font-size: 1.85em;
+    margin: 0;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    padding: 10px;
+    /* Add some padding for better spacing */
+    border: 1px solid #ccc;
+    /* Add a border for better separation */
+}
+
+.carousel-item img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+.card {
+
+    width: 100%;
+
+    .card-img-overlay {
+
+        background-color: rgba(0, 0, 0, 0.3); 
+        //p {
+            /*transform: translateY(-60%)!important;*/
+        //}
+
+    }
+}
+
+
+
+/******************************************************   Footer section    ******************************************/
+footer {
+    background-color: rgb(44, 23, 9)!important;
+    padding-left: 30px !important;
+
+    .footer-section {
+        display: flex;
+        justify-content: space-between;
+    
+    
+    }
+    
+    .subscribe-section {
+        padding-bottom: 60px !important;
+    }
+  
+    .txt-emailAddress{
+        margin-right: 8px!important;
+    }
+    
+    .footer-bottom {
+        display: flex!important;
+        align-items: center!important;
+    }
+
+    
+
+        h5{
+            color: bisque;
+
+        } 
+        p {
+            color: #f4f4f4;
+            
+        }
+
+        .nav-link{
+            color: #ccc!important;
+        }
+
+    
+
+    .btn-subscribe {
+        background-color: $homepageLightColour;
+        color: $homepageDarkColour;
+    }
+
+    .btn-subscribe:hover {
+        background-color: $homepageDarkColour;
+        color: $homepageLightColour;
+        border: 2px solid $homepageLightColour;
+    }
+
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .subscribe-form {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+}
+
+
+
+
+/**************************************************  About main page  ****************************************************/
+.picture-with-text {
+    background-color: #403415!important;
+
+    .card-text {
+        /*font-family: 'Stint Ultra Expanded', serif;*/
+        font-family: 'Waiting for the Sunrise', cursive;
+        font-weight: 40;
+
+    }
+
+    .vision-buffer {
+        background-image: url('Images/wordSourcedImages/entrepreneur-endeavour-resized.jpg')!important;
+        width: 300px!important;
+    height: 200px!important;
+    background-size: cover!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    }
+
+}
+
+
+
+/***************************************************  Join Us Page    ******************************************************/
+.section_googleFormAlke{
+    background-color: rgb(47, 15, 15);
+    
+    
+  }
+  
+  
+  .googleFormAlke{
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+    margin-left:6%;
+    padding:5px;
+  }
