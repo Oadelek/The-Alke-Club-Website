@@ -109,7 +109,7 @@ body {
   padding: 0;
   white-space: nowrap;
   font-size: 120px;
-  font-family: "Lobster", cursive;
+  font-family: "Creepster", cursive;
 }
 .hero-text h5 {
   margin-bottom: -7px;
@@ -207,7 +207,7 @@ body {
   /* Add vertical scrollbar if content exceeds the max height */
   background-color: #d9c89c !important;
   color: #211e16 !important;
-  font-family: "Waiting for the Sunrise", cursive;
+  font-family: "Jost", sans-serif;
   font-size: 1.85em;
   margin: 0;
   letter-spacing: 0.2rem;
@@ -263,7 +263,7 @@ body {
 }
 .section-buffer p {
   font-size: 1.65em;
-  font-family: "Waiting for the Sunrise", cursive;
+  font-family: "Jost", sans-serif;
 }
 .section-buffer ul {
   list-style: none;
@@ -618,12 +618,6 @@ footer .footer-section {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
-.footer-bottom img {
-    max-width: 100%;
-    height: auto;
-}
-
 footer .subscribe-section {
   padding-bottom: 60px !important;
 }
@@ -655,6 +649,11 @@ footer .btn-subscribe:hover {
   background-color: #211e16 !important;
   color: #d9c89c !important;
   border: 2px solid #d9c89c !important;
+}
+
+.footer-bottom img {
+  max-width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 500px) {
