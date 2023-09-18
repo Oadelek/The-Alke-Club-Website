@@ -618,6 +618,12 @@ footer .footer-section {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.footer-bottom img {
+    max-width: 100%;
+    height: auto;
+}
+
 footer .subscribe-section {
   padding-bottom: 60px !important;
 }
