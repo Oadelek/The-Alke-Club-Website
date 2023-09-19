@@ -116,7 +116,7 @@ body {
   padding: 0;
   font-size: 30px;
   text-transform: lowercase;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Soehne", system-ui, Helvetica Neue, Arial, sans-serif;
 }
 .hero-text .btn-invitation {
   margin-top: 10px !important;
@@ -394,7 +394,7 @@ body {
 }
 .image-text-container p {
   font-size: 1.5em;
-  font-family: "Waiting for the Sunrise", cursive;
+  font-family: "Jost", sans-serif;
   color: rgb(245, 244, 255);
   font-weight: 500;
 }
