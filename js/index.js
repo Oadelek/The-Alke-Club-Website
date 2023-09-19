@@ -46,6 +46,10 @@ var animationFrameId;
 
 // Function to check if an element is in the viewport
 function isInViewport(element) {
+    if (element === null) {
+        return false; // Element is not in the DOM, consider it out of the viewport
+    }
+
     var rect = element.getBoundingClientRect();
     return (
         rect.top >= 0 &&
@@ -62,6 +66,7 @@ function startTypewriterIfInView() {
         animationFrameId = requestAnimationFrame(typewriter);
     }
 }
+
 
 var start;
 
@@ -110,20 +115,25 @@ window.addEventListener("scroll", () => {
     const image = document.querySelector("img");
     const textContent = document.querySelector(".text-content");
 
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
+    if (image !== null && textContent !== null) {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
 
-    const imageOffset = image.offsetTop;
-    const textContentOffset = textContent.offsetTop;
+        const imageOffset = image.offsetTop;
+        const textContentOffset = textContent.offsetTop;
 
-    if (scrollPosition + windowHeight > imageOffset) {
-        image.style.animation = "slide-in 2s forwards";
-    }
+        if (scrollPosition + windowHeight > imageOffset) {
+            image.style.animation = "slide-in 2s forwards";
+        }
 
-    if (scrollPosition + windowHeight > textContentOffset) {
-        textContent.style.animation = "slide-up 2s forwards";
-    }
+        if (scrollPosition + windowHeight > textContentOffset) {
+            textContent.style.animation = "slide-up 2s forwards";
+        }
+    } 
 });
+
+
+
 
 
 
