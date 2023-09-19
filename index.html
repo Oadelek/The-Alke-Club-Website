@@ -199,22 +199,28 @@
     <!--Footer Section-->
     <footer class="py-5">
 
-        <div class="row footer-section">
+         <div class="row footer-section">
 
-            <div class="col-md-5 offset-md-1 mb-3 subscribe-section">
-                <form>
+            <div class="col-md-5 mb-3 subscribe-section">
+                 <form name="submit-to-google-sheet">
                     <h5>Subscribe to our newsletter</h5>
                     <p>Monthly digest of what's new and exciting from us.</p>
                     <div class="d-flex flex-sm-row w-100 gap-2 subscribe-form">
                         <label for="newsletter1" class="visually-hidden">Email address</label>
-                        <input id="newsletter1" type="text" class="form-control txt-emailaddr txt-emailAddress"
-                            placeholder="Email address">
-                            <a href="membership.html" class="btn  btn-subscribe">Subscribe</a>
+                        <input id="newsletter1" type="text" name="Email" class="form-control txt-emailaddr txt-emailAddress"
+                            placeholder="Email address" required>
+                            <button type="submit" class="btn  btn-subscribe" >Subscribe</button>
                         <div data-lastpass-icon-root="true"
                             style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;">
                         </div>
-                    </div>
-                </form>
+                    </div>                    
+                </form> 
+                <span id="subscribe-msg" style="color: beige;" ></span>
+
+               
+
+
+
             </div>
 
 
@@ -238,7 +244,7 @@
                 </ul>
             </div>
 
-        </div>
+        </div> 
 
          <div class="d-flex flex-column align-items-center py-4 my-4 border-top footer-bottom" >
             <p>Empowering generations for the future!</p>
@@ -258,6 +264,25 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/mdb.min.js"></script>
     <script src="js/index.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw5P-lRZFC9y2AL9DflhUV1vdeLRiqtlFsq4G6cscAvpB5myCuUOV_OKAKOHCXupnhf/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("subscribe-msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Thank you for subscribing!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 
 </body>
 
