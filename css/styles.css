@@ -2,6 +2,8 @@
 /*****************************************************   General      ***********************************************/
 body {
   padding-top: 4.4rem;
+  -webkit-text-size-adjust: none !important;
+}
 }
 
 .row {
