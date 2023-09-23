@@ -348,9 +348,17 @@ body {
 }
 .image-text-container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin: 0;
   width: 100%;
@@ -361,19 +369,25 @@ body {
   max-width: 100%;
   height: 100%;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
   opacity: 0.5;
-  transform: translateX(-100%);
-  animation: slide-in 2s forwards; /* Animation to slide image in */
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation: slide-in 2s forwards;
+          animation: slide-in 2s forwards; /* Animation to slide image in */
 }
 .image-text-container .text-content {
   position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%);
   background: linear-gradient(transparent, transparent), radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%); /* Shape gradient */
   padding: 5px;
   border-radius: 8px;
-  transform: translateY(100%);
-  animation: slide-up 2s forwards; /* Animation to slide text up */
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-animation: slide-up 2s forwards;
+          animation: slide-up 2s forwards; /* Animation to slide text up */
   height: auto;
 }
 .image-text-container h2 {
@@ -414,14 +428,29 @@ body {
   }
 }
 
+@-webkit-keyframes slide-in {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 @keyframes slide-in {
   to {
+    -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+@-webkit-keyframes slide-up {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
 @keyframes slide-up {
   to {
+    -webkit-transform: translateY(0);
             transform: translateY(0);
   }
 }
