@@ -2,8 +2,6 @@
 /*****************************************************   General      ***********************************************/
 body {
   padding-top: 4.4rem;
-  -webkit-text-size-adjust: none !important;
-}
 }
 
 .row {
@@ -118,7 +116,7 @@ body {
   padding: 0;
   font-size: 30px;
   text-transform: lowercase;
-  font-family: "Soehne", system-ui, Helvetica Neue, Arial, sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 .hero-text .btn-invitation {
   margin-top: 10px !important;
@@ -190,7 +188,7 @@ body {
     font-size: 12px;
   }
   .overlay-text h2 {
-    font-size: 0.9em;
+    font-size: 0.75em;
   }
 }
 /***********************  Main Content Section ********************/
@@ -348,17 +346,9 @@ body {
 }
 .image-text-container {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
+  align-items: center; 
+    justify-content: center;   
   height: fit-content;
   margin: 0;
   width: 100%;
@@ -366,27 +356,20 @@ body {
   padding: 160px;
 }
 .image-text-container img {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   border-radius: 8px;
-    -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   margin-right: 20px;
   opacity: 0.5;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  -webkit-animation: slide-in 2s forwards;
-          animation: slide-in 2s forwards; /* Animation to slide image in */
+  transform: translateX(-100%);
+  animation: slide-in 2s forwards; /* Animation to slide image in */
 }
 .image-text-container .text-content {
   position: absolute;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(transparent)), radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%);
   background: linear-gradient(transparent, transparent), radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%); /* Shape gradient */
-  padding: 5px;
   border-radius: 8px;
-  -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  -webkit-animation: slide-up 2s forwards;
           animation: slide-up 2s forwards; /* Animation to slide text up */
   height: auto;
 }
@@ -415,42 +398,92 @@ body {
     font-size: 28px;
   }
   .image-text-container p {
-    font-size: 1em;
-  }
-}
-/* Media query for even smaller screens */
-@media (max-width: 545px) {
-  .image-text-container h2 {
-    font-size: 24px;
-  }
-  .image-text-container p {
     font-size: 0.85em;
   }
 }
+/* Media query for even smaller screens */
+@media screen and  (max-width: 445px) {
 
-@-webkit-keyframes slide-in {
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+  .image-text-container {
+    position: relative;
+    text-align: center; /* Center the contents horizontally */
+    height: auto; /* Adjust height to fit content */
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+     padding-top: 160px; 
   }
+  
+  .image-text-container img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 6px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 15px;
+    opacity: 0.5;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    animation: slide-in 2s forwards; /* Animation to slide image in */
+  }
+  
+
+  .image-text-container .text-content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 12px; /* Adjust padding as needed */
+    background: linear-gradient(transparent, transparent), radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%); /* Shape gradient */
+    border-radius: 8px;
+    transform: translateY(100%);
+    animation: slide-up 2s forwards; /* Animation to slide text up */
+  }
+
+
+
+  /* Additional CSS for centering text vertically */
+  .image-text-container::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px; /* Adjust for image margin */
+  }
+  
+  .image-text-container p {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center; /* Adjust text alignment as needed */
+  }
+  
+
+
+  .image-text-container h2 {
+    font-size: 22px;
+  }
+  .image-text-container p {
+    font-size: 0.845em;
+  }
+
+  .mission-text-content {
+    /* padding-top: 50px; */
+    font-weight: bolder;
+     font-size: 0.845em ;
+  }
+
+
 }
 
 @keyframes slide-in {
   to {
-    -webkit-transform: translateX(0);
             transform: translateX(0);
-  }
-}
-@-webkit-keyframes slide-up {
-  to {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
   }
 }
 
 @keyframes slide-up {
   to {
-    -webkit-transform: translateY(0);
             transform: translateY(0);
   }
 }
@@ -575,6 +608,7 @@ body {
     font-size: 1.7rem;
   }
 }
+
 .slideshow-buffer {
   padding-top: 12px !important;
   height: 34rem;
